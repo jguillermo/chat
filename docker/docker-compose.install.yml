@@ -1,0 +1,8 @@
+version: '2'
+services:
+  node:
+    image: jguillermo/angular-cli:node
+    volumes:
+      - ./..:/usr/src
+      - ~/nodecache:/nodecache
+
