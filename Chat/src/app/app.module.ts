@@ -6,10 +6,15 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {firebaseConfig} from "../environments/chatfire.config";
 import {AngularFireModule} from "angularfire2";
+import { ChatComponent } from './components/chat/chat.component';
+import {FirechatService} from "./services/firechat.service";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +22,9 @@ import {AngularFireModule} from "angularfire2";
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    FirechatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
